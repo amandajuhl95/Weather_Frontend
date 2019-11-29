@@ -1,118 +1,125 @@
-import React, { useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
-import { useSelector, useDispatch } from "react-redux"
-import AutoComplete from "@material-ui/lab/AutoComplete"
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import AutoComplete from "@material-ui/lab/AutoComplete";
 import {
   Drawer,
   Box,
   TextField,
   Button,
   CircularProgress
-} from "@material-ui/core"
-import Calendar from "react-calendar"
-import moment from "moment"
+} from "@material-ui/core";
+import Calendar from "react-calendar";
+import moment from "moment";
 
-import { geographyActions } from "../../redux/actions"
-import api from "../../api"
+import { geographyActions } from "../../redux/actions";
+import api from "../../api";
 
-import useStyles from "./styles"
+import useStyles from "./styles";
 
 export default ({ isOpen, handleClose, defaultCountry }) => {
-  const [isCountry, setIsCountry] = useState(false)
-  const [isCity, setIsCity] = useState(false)
-  const [isDate, setIsDate] = useState(false)
-  const [country, setCountry] = useState(defaultCountry)
-  const [city, setCity] = useState(null)
-  const [date, setDate] = useState(moment().toDate())
-  const classes = useStyles()
-  let history = useHistory()
+  const [isCountry, setIsCountry] = useState(false);
+  const [isCity, setIsCity] = useState(false);
+  const [isDate, setIsDate] = useState(false);
+  const [country, setCountry] = useState(defaultCountry);
+  const [city, setCity] = useState(null);
+  const [date, setDate] = useState(moment().toDate());
+  const classes = useStyles();
+  let history = useHistory();
 
-  const countryList = useSelector(state => state.geography.country)
+  const countryList = useSelector(state => state.geography.country);
   const isCountryLoading = useSelector(
     state => state.geography.isCountryLoading
-  )
-  const cityList = useSelector(state => state.geography.city)
-  const isCityLoading = useSelector(state => state.geography.isCityLoading)
-  const dispatch = useDispatch()
+  );
+  const cityList = useSelector(state => state.geography.city);
+  const isCityLoading = useSelector(state => state.geography.isCityLoading);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    initializeState()
-  }, [isOpen])
+    initializeState();
+  }, [isOpen]);
 
   useEffect(() => {
-    initializeState()
-    setCountry(defaultCountry)
-  }, [defaultCountry])
+    initializeState();
+    setCountry(defaultCountry);
+  }, [defaultCountry]);
 
   const getCity = () => {
-    dispatch(geographyActions.getCity(api.getCity(country.countryCode)))
-  }
+    dispatch(geographyActions.getCity(api.getCity(country.countryCode)));
+  };
 
   const initializeState = () => {
-    setIsCountry(false)
-    setIsCity(false)
-    setIsDate(false)
-    setCountry(null)
-    setCity(null)
-    setDate(moment().toDate())
-  }
+    setIsCountry(false);
+    setIsCity(false);
+    setIsDate(false);
+    setCountry(null);
+    setCity(null);
+    setDate(moment().toDate());
+  };
   const handleSelectCountry = () => {
     //validation
     if (!country) {
-      alert("select country")
-      return
+      alert("select country");
+      return;
     }
 
-    getCity()
-    setIsCountry(true)
-  }
+    getCity();
+    setIsCountry(true);
+  };
 
   const handleSelectCity = () => {
     //validation
     if (!city) {
-      alert("select city")
-      return
+      alert("select city");
+      return;
     }
 
-    setIsCity(true)
-  }
+    setIsCity(true);
+  };
 
   const handleGetCurrentWeather = () => {
     //currentWeather, initializeState
-    initializeState()
-    handleClose()
+    initializeState();
+    handleClose();
     history.push(`/weather/city/${city.cityCode}`, {
       fromDropDown: "true",
-      cityName: city.name
-    })
-  }
+      cityName: city.name,
+      countryName: country.name
+    });
+  };
 
   const handleChooseDate = () => {
-    setIsDate(true)
-  }
+    setIsDate(true);
+  };
 
   const onDateChange = selectedDate => {
-    setDate(selectedDate)
-  }
+    setDate(selectedDate);
+  };
 
   const handleGetSpecificWeather = () => {
     //currentWeather, initializeState
-    initializeState()
-    handleClose()
+    initializeState();
+    handleClose();
     history.push(
       `/weather/city/${city.cityCode}/${date.getFullYear()}/${date.getMonth() +
         1}/${date.getDate()}`,
       { fromDropDown: "true", cityName: city.name }
-    )
-  }
+    );
+  };
 
   const onCountryChange = (event, value) => {
-    setCountry(value)
-  }
+    setCountry(value);
+    setCity(null);
+    setIsCity(false);
+    setIsCountry(false);
+    setIsDate(false);
+  };
 
   const onCityChange = (event, value) => {
-    setCity(value)
-  }
+    setCity(value);
+    setIsCity(false);
+    setIsDate(false);
+  };
 
   return (
     <Drawer
@@ -258,5 +265,5 @@ export default ({ isOpen, handleClose, defaultCountry }) => {
         )}
       </Box>
     </Drawer>
-  )
-}
+  );
+};

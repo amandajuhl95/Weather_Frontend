@@ -71,7 +71,9 @@ export default () => {
           {!eventErrorMessage ? (
             <EventScrollbar event={event} cityName={cityName.current} />
           ) : (
-            <div>{eventErrorMessage}</div>
+            <div className={classes.error}>
+              <p>{eventErrorMessage}</p>
+            </div>
           )}
           <br></br>
         </div>

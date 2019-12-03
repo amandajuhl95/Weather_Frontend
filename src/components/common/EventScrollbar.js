@@ -8,11 +8,12 @@ import { Colors } from "../../themes";
 const useStyles = makeStyles(theme => ({
   eventDiv: {
     overflow: "scroll",
+    overflowY: "hidden",
     flexWrap: "nowrap",
     display: "flex",
     overflowX: "auto",
     maxWidth: 1000,
-    width: "80%"
+    width: "100%"
   },
 
   paper: {

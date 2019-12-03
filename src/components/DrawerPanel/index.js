@@ -103,7 +103,7 @@ export default ({ isOpen, handleClose, defaultCountry }) => {
     history.push(
       `/weather/city/${city.cityCode}/${date.getFullYear()}/${date.getMonth() +
         1}/${date.getDate()}`,
-      { fromDropDown: "true", cityName: city.name }
+      { fromDropDown: "true", cityName: city.name, countryName: country.name }
     );
   };
 

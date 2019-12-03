@@ -7,5 +7,5 @@ export {
   SpinnerOverlay,
   ErrorSnackBar,
   AlertBox,
-  EventCard
+  EventScrollbar
 } from "./common";

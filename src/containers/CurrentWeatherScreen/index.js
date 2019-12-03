@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams, useLocation, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Card, SpinnerOverlay, AlertBox, EventCard } from "../../components";
+import {
+  Card,
+  SpinnerOverlay,
+  AlertBox,
+  EventScrollbar
+} from "../../components";
 import { weatherActions, eventActions } from "../../redux/actions";
 import api from "../../api";
 import useStyles from "./styles";
@@ -52,11 +57,13 @@ export default () => {
       ) : !errorMessage ? (
         <div>
           <Card weather={weather} cityName={cityName.current} />
+          <br></br>
           {!eventErrorMessage ? (
-            <EventCard event={event} cityName={cityName.current} />
+            <EventScrollbar event={event} cityName={cityName.current} />
           ) : (
             <div>{eventErrorMessage}</div>
           )}
+          <br></br>
         </div>
       ) : (
         <AlertBox errorMessage={errorMessage} action="Go to map" />

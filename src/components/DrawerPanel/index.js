@@ -245,7 +245,6 @@ export default ({ isOpen, handleClose, defaultCountry }) => {
         {isDate && (
           <React.Fragment>
             <Calendar
-              color="rgb(93, 144, 182)"
               className={classes.calendar}
               minDate={moment("2013/01/01").toDate()}
               maxDate={moment()

@@ -55,7 +55,7 @@ export default () => {
                       outline: "none"
                     },
                     hover: {
-                      fill: "Colors.mapHover",
+                      fill: Colors.mapHover,
                       outline: "none"
                     },
                     pressed: {

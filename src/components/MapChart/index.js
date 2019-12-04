@@ -55,13 +55,14 @@ export default () => {
                       outline: "none"
                     },
                     hover: {
-                      fill: Colors.mapHover,
+                      fill: "Colors.mapHover",
                       outline: "none"
                     },
                     pressed: {
                       fill: Colors.mapPressed,
                       outline: "none"
                     }
+                    
                   }}
                   onMouseEnter={() => setContent(geo.properties.name)}
                   onMouseLeave={() => setContent("")}

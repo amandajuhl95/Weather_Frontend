@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles";
 
-const drawerWidth = 300
+const drawerWidth = 300;
 
 export default makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
@@ -19,9 +19,15 @@ export default makeStyles(theme => ({
     width: "100%"
   },
   calendar: {
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
+    color: "#000000"
   },
+
+  "react-calendar__tile--active": {
+    color: "rgb(93, 144, 182)"
+  },
+
   inputRoot: {
     flexWrap: "unset"
   }
-}))
+}));

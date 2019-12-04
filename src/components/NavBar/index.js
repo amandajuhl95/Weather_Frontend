@@ -20,7 +20,6 @@ export default () => {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        //main: "#90CAF9",
         main: "rgb(44, 84, 123)",
         contrastText: "#fff"
       },

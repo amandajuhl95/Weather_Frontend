@@ -1,26 +1,26 @@
-import React from "react"
+import React from "react";
 import {
   Typography,
   Paper,
   GridListTile,
   GridList,
   Box
-} from "@material-ui/core"
+} from "@material-ui/core";
 
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles";
 
-import { Colors } from "../../themes"
+import { Colors } from "../../themes";
 
 const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(2),
     margin: "auto",
     width: "80%",
-    maxWidth: 1000,
+    maxWidth: 1000
   },
   image: {
     width: 150,
-    maxWidth: "80%",
+    maxWidth: "80%"
   },
   title: {
     color: Colors.white,
@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: Colors.lightBlue
   },
   box: {
-    height: "100%",
+    height: "100%"
   },
   weatherBox: {
     backgroundColor: Colors.middleBlue,
@@ -47,12 +47,12 @@ const useStyles = makeStyles(theme => ({
     paddingTop: 10,
     paddingBottom: 10,
     paddingLeft: 5,
-    paddingRight: 5,
+    paddingRight: 5
   }
-}))
+}));
 
 export default ({ weather, cityName }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <Paper className={classes.paper}>
       <GridList cols={weather.length} cellHeight={"auto"}>
@@ -71,7 +71,11 @@ export default ({ weather, cityName }) => {
         {weather.map((value, index) => {
           return (
             <GridListTile cols={1} key={index} component="div">
-              <Box className={classes.box} display="flex" flexDirection="column">
+              <Box
+                className={classes.box}
+                display="flex"
+                flexDirection="column"
+              >
                 <Typography
                   variant="subtitle1"
                   align="center"
@@ -136,9 +140,9 @@ export default ({ weather, cityName }) => {
                 </Box>
               </Box>
             </GridListTile>
-          )
+          );
         })}
       </GridList>
     </Paper>
-  )
-}
+  );
+};

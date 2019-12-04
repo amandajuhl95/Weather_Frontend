@@ -20,11 +20,7 @@ export default makeStyles(theme => ({
   },
   calendar: {
     marginTop: theme.spacing(2),
-    color: "#000000"
-  },
-
-  "react-calendar__tile--active": {
-    color: "rgb(93, 144, 182)"
+    button: { ":active": { backgroundColor: "rgb(0,255, 0)" } }
   },
 
   inputRoot: {

@@ -11,8 +11,8 @@ export default makeStyles(theme => ({
 
   error: {
     textAlign: "center",
-    color: "#00529B",
-    backgroundColor: "#BDE5F8",
+    color: "#ffffff",
+    backgroundColor: "rgb(152, 192, 229)",
     alignItems: "center",
 
     position: "relative",

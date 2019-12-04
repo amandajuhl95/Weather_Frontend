@@ -81,6 +81,7 @@ export default () => {
         <SpinnerOverlay />
       ) : !errorMessage ? (
         <div>
+          <br></br>
           <Card weather={weather} cityName={cityName.current} />
           <br></br>
           {!eventErrorMessage ? (

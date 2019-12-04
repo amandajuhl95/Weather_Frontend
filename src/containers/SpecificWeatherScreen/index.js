@@ -76,7 +76,7 @@ export default () => {
         max_rotation: 400, // maximum rotation (deg) during full animation cycle
         min_size: 20, // minimum svg size in pixels
         max_size: 96, // maximum svg size in pixels
-        start_color: "#89cff0", // start animation color, follows same easing
+        start_color: "rgb(93,144,182)", // start animation color, follows same easing
         end_color: "#f7f7f7", // end animation color
         full_screen: true // override container size and use full documentElement boundaries
       }
@@ -85,10 +85,12 @@ export default () => {
 
   return (
     <div className={classes.container}>
+    
       {isLoading ? (
         <SpinnerOverlay />
       ) : !errorMessage ? (
         <div>
+          <br></br>
           <Card weather={weather} cityName={cityName.current} />
           <br></br>
           {!eventErrorMessage ? (

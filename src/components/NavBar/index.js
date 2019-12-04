@@ -20,13 +20,12 @@ export default () => {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: "#90CAF9",
-        contrastText: "#fff",
-        IconButton: "#fff"
+        //main: "#90CAF9",
+        main: "rgb(44, 84, 123)",
+        contrastText: "#fff"
       },
       secondary: {
-        main: "#fff",
-        "&:hover": "0D47A1"
+        main: "#fff"
       }
     }
   });
@@ -62,7 +61,7 @@ export default () => {
             <IconButton
               edge="start"
               className={classes.menuButton}
-              color="primary"
+              color="secondary"
               aria-label="home"
               onClick={handleGlobalClick}
             >

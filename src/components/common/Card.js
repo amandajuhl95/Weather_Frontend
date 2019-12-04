@@ -10,7 +10,6 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 import { Colors } from "../../themes";
-import { fontSize } from "@material-ui/system";
 
 const useStyles = makeStyles(theme => ({
   paper: {

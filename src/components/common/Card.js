@@ -10,12 +10,13 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 import { Colors } from "../../themes";
+import { fontSize } from "@material-ui/system";
 
 const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(2),
     margin: "auto",
-    width: "80%",
+    width: "100%",
     maxWidth: 1000
   },
   image: {
@@ -29,10 +30,19 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     color: Colors.white,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    paddingBottom: 10
+  },
+  temp: {
+    color: Colors.white,
+    fontWeight: "bold",
+    fontSize: 24,
+    paddingBottom: 15,
+    paddingTop: 10
   },
   advice: {
-    color: Colors.white
+    color: Colors.white,
+    paddingTop: 10
   },
   dateTime: {
     color: Colors.white,
@@ -96,11 +106,9 @@ export default ({ weather, cityName }) => {
                   <Typography
                     variant="subtitle1"
                     align="center"
-                    className={classes.text}
+                    className={classes.temp}
                   >
                     {value.temp.toFixed(2)}ºC
-                    <br />
-                    <br />
                   </Typography>
                   <Typography
                     variant="subtitle1"

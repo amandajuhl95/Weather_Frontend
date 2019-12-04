@@ -99,6 +99,8 @@ export default ({ weather, cityName }) => {
                     className={classes.text}
                   >
                     {value.temp.toFixed(2)}ºC
+                    <br />
+                    <br />
                   </Typography>
                   <Typography
                     variant="subtitle1"

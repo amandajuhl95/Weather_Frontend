@@ -1,6 +1,6 @@
-import React from "react"
-import { makeStyles } from "@material-ui/styles"
-import CircularProgress from "@material-ui/core/CircularProgress"
+import React from "react";
+import { makeStyles } from "@material-ui/styles";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,15 +14,17 @@ const useStyles = makeStyles(theme => ({
     bottom: 0,
     backgroundColor: "rgba(255, 255, 255, 0.2)",
     zIndex: 3000
-  }
-}))
+  },
+
+  spinner: { color: "rgb(44, 84, 123)" }
+}));
 
 export default () => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <CircularProgress size={100} />
+      <CircularProgress size={100} className={classes.spinner} />
     </div>
-  )
-}
+  );
+};

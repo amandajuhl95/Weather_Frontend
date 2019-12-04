@@ -57,7 +57,7 @@ export default () => {
  
     setTimeout(() => {
       rain(document.getElementById("rain"), weather.map(value => value.weatherIcon)[0], {
-          density:                13,             // higher means faster spawn interval
+          density:                7,             // higher means faster spawn interval
           min_duration:           8000,           // minimum animation duration
           max_duration:           11000,          // minimum animation duration
           easing:                 'ease-in',       // use other easings, e.g. 'cubic-bezier(.57,.01,.87,.77)'

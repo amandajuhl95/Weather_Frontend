@@ -6,9 +6,7 @@ export default makeStyles(theme => ({
   },
   title: {
     fontWeight: "bold",
-    //align: "center",
-    //flexGrow: 1,
-    paddingLeft: "33%",
+    flexGrow: 1,
     fontSize: 28,
     fontFamily: "'Roboto', sans-serif"
   },

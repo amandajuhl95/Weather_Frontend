@@ -78,7 +78,7 @@ export default () => {
               isOpen={isOpen}
               color="primary"
             />
-            <Typography variant="h5" className={classes.title}>
+            <Typography variant="h5" align="center" className={classes.title}>
               Weather Cloud <Cloud />
             </Typography>
           </Toolbar>

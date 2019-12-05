@@ -135,26 +135,26 @@ export default () => {
     getCurrentEvent();
   }, [cityCode]);
 
-  setTimeout(() => {
-    rain(
-      document.getElementById("rain"),
-      weather.map(value => value.weatherIcon)[0],
-      {
-        density: 7, // higher means faster spawn interval
-        min_duration: 8000, // minimum animation duration
-        max_duration: 11000, // minimum animation duration
-        easing: "ease-in", // use other easings, e.g. 'cubic-bezier(.57,.01,.87,.77)'
-        spawnsvg_uncertainty: 500, // raise to make spawn intervals seem more random
-        min_rotation: 200, // minimum rotation (deg) during full animation cycle
-        max_rotation: 400, // maximum rotation (deg) during full animation cycle
-        min_size: 20, // minimum svg size in pixels
-        max_size: 96, // maximum svg size in pixels
-        start_color: "rgb(93,144,182)", // start animation color, follows same easing
-        end_color: "#f7f7f7", // end animation color
-        full_screen: true // override container size and use full documentElement boundaries
-      }
-    );
-  }, 1100);
+ 
+    setTimeout(() => {
+      rain(document.getElementById("rain"), weather.map(value => value.weatherIcon)[0], {
+          density:                8,             // higher means faster spawn interval
+          min_duration:           8000,           // minimum animation duration
+          max_duration:           11000,          // minimum animation duration
+          easing:                 'ease-in',       // use other easings, e.g. 'cubic-bezier(.57,.01,.87,.77)'
+          spawnsvg_uncertainty:   500,            // raise to make spawn intervals seem more random
+          min_rotation:           200,            // minimum rotation (deg) during full animation cycle
+          max_rotation:           400,            // maximum rotation (deg) during full animation cycle
+          min_size:               20,             // minimum svg size in pixels
+          max_size:               96,             // maximum svg size in pixels
+          start_color:            'rgb(93,144,182)',    // start animation color, follows same easing
+          end_color:              '#f7f7f7',    // end animation color
+          full_screen:            true           // override container size and use full documentElement boundaries
+      });
+      
+    }, 1100);
+    
+
 
   return (
     <div className={classes.container}>

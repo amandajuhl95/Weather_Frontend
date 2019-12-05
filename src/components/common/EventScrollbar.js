@@ -24,7 +24,9 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     color: Colors.white,
-    fontWeight: "bold",
+    fontFamily: "'Andale Mono', sans- serif",
+    fontWeight: "normal",
+    fontSize: 35,
     padding: theme.spacing(1)
   },
   text: {

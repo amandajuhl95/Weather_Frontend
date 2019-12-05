@@ -19,8 +19,7 @@ export default makeStyles(theme => ({
     width: "100%"
   },
   calendar: {
-    marginTop: theme.spacing(2),
-    button: { ":active": { backgroundColor: "rgb(0,255, 0)" } }
+    marginTop: theme.spacing(2)
   },
 
   inputRoot: {

@@ -1,9 +1,16 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { AppBar, Toolbar, CssBaseline, IconButton } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  IconButton,
+  Typography
+} from "@material-ui/core";
 import LanguageIcon from "@material-ui/icons/Language";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { Cloud } from "@material-ui/icons";
 
 import { DrawerPanel, ToggleButton } from "../../components";
 import { drawerActions } from "../../redux/actions";
@@ -71,6 +78,9 @@ export default () => {
               isOpen={isOpen}
               color="primary"
             />
+            <Typography variant="h5" align="center" className={classes.title}>
+              Weather Cloud <Cloud />
+            </Typography>
           </Toolbar>
         </AppBar>
         <div className={classes.offset}></div>

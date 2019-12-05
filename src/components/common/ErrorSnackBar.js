@@ -12,9 +12,14 @@ const useStyles = makeStyles(theme => ({
   toastContent: {
     backgroundColor: "rgba(44, 84, 123, 0.8)"
   },
-  message: {
-    display: "flex",
-    alignItems: "center"
+  title: {
+    fontFamily: "'Andale Mono', sans- serif",
+    fontWeight: "normal",
+    fontSize: 24
+  },
+  text: {
+    fontFamily: "'Andale Mono', sans- serif",
+    fontWeight: "normal"
   }
 }));
 
@@ -48,17 +53,19 @@ export default () => {
         }}
         open={open}
         onClose={handleClose}
-        autoHideDuration={15000}
+        autoHideDuration={20000}
         className={classes.toast}
       >
         <SnackbarContent
           className={classes.toastContent}
           message={
-            <span align="center" className={classes.message}>
-              Hello! <br />
-              Click on a country on the map <br />
-              and get a weather forcast
-            </span>
+            <div align="center" className={classes.text}>
+              <div className={classes.title}>Hello!</div>
+              <br />
+              <div>
+                Click on a country on the map, <br /> and get a weather forcast
+              </div>
+            </div>
           }
           action={[
             <IconButton key="close" aria-label="close" onClick={handleClose}>

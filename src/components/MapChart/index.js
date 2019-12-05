@@ -1,34 +1,34 @@
-import React, { useState } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   ComposableMap,
   Geographies,
   Geography,
   ZoomableGroup
-} from "react-simple-maps"
-import ReactTooltip from "react-tooltip"
+} from "react-simple-maps";
+import ReactTooltip from "react-tooltip";
+import { ErrorSnackBar } from "../common";
+import { drawerActions } from "../../redux/actions";
+import { Colors } from "../../themes";
+import { getCountry } from "../../utils";
+import useStyles from "./styles";
 
-import { drawerActions } from "../../redux/actions"
-import { Colors } from "../../themes"
-import { getCountry } from "../../utils"
-import useStyles from "./styles"
-
-import geographyObject from "./combine2.json"
+import geographyObject from "./combine2.json";
 
 export default () => {
-  const classes = useStyles()
-  const countryList = useSelector(state => state.geography.country)
-  const dispatch = useDispatch()
+  const classes = useStyles();
+  const countryList = useSelector(state => state.geography.country);
+  const dispatch = useDispatch();
   const setCountry = country => {
-    dispatch(drawerActions.setCountry(country))
-    dispatch(drawerActions.setVisible(true))
-  }
-  const [content, setContent] = useState("")
+    dispatch(drawerActions.setCountry(country));
+    dispatch(drawerActions.setVisible(true));
+  };
+  const [content, setContent] = useState("");
 
   const handleCountryClick = geo => {
-    setCountry(getCountry(countryList, geo.properties.name))
-  }
+    setCountry(getCountry(countryList, geo.properties.name));
+  };
 
   return (
     <React.Fragment>
@@ -62,7 +62,6 @@ export default () => {
                       fill: Colors.mapPressed,
                       outline: "none"
                     }
-                    
                   }}
                   onMouseEnter={() => setContent(geo.properties.name)}
                   onMouseLeave={() => setContent("")}
@@ -74,6 +73,7 @@ export default () => {
         </ZoomableGroup>
       </ComposableMap>
       <ReactTooltip>{content}</ReactTooltip>
+      <ErrorSnackBar />
     </React.Fragment>
-  )
-}
+  );
+};

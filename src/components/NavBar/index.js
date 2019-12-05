@@ -31,7 +31,8 @@ export default () => {
         contrastText: "#fff"
       },
       secondary: {
-        main: "#fff"
+        main: "#fff",
+        contrastText: "#fff"
       }
     }
   });

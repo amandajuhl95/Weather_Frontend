@@ -114,7 +114,11 @@ const EventItem = (value, key) => {
           Address: {value.value.eventAddress}
         </Typography>
         <Typography variant="subtitle1" align="center" className={classes.text}>
-          <a href={value.value.eventURL} className={classes.button}>
+          <a
+            href={value.value.eventURL}
+            target="_blank"
+            className={classes.button}
+          >
             Buy ticket here
           </a>
         </Typography>
